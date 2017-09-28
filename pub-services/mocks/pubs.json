@@ -23,5 +23,70 @@
                 "name": "Triple Karmeliet"
             }
         ]
+    },
+    {
+        "name": "Delirium Café",
+        "owner": {
+            "firstName": "Joël",
+            "lastName": "Pêcheur",
+            "mail": "booking@deliriumvillage.com"
+        },
+        "openDays": [
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ],
+        "openHours": {
+            "start": 10,
+            "end": 4
+        },
+        "beers": [
+            {
+                "type": "Blonde",
+                "name": "Cuvée des Trolls"
+            },
+            {
+                "type": "Blonde",
+                "name": "Chouffe"
+            },
+            {
+                "type": "Brune",
+                "name": "Chimay bleue"
+            }
+        ]
+    },
+    {
+        "name": "405",
+        "owner": {
+            "firstName": "Jean-Michel",
+            "lastName": "Posé",
+            "mail": "barabiere69@gmail.com"
+        },
+        "openDays": [
+            "Monday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ],
+        "openHours": {
+            "start": 9,
+            "end": 2
+        },
+        "beers": [
+            {
+                "type": "Blonde",
+                "name": "Barbãr"
+            },
+            {
+                "type": "Blonde",
+                "name": "Maredsous"
+            },
+            {
+                "type": "Brune",
+                "name": "Rochefort 10"
+            }
+        ]
     }
 ]

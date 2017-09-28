@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/ThomasPortier/pub-services/issues"
   },
-  "homepage": "https://github.com/ThomasPortier/pub-services#readme"
+  "homepage": "https://github.com/ThomasPortier/pub-services#readme",
+  "dependencies": {}
 }
