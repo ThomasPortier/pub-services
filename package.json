@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha ./**/*.test.js",
-    "start": "pub.services.js"
+    "start": "node ./services/pub.services.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.1.2",
+    "lodash": "^4.17.4",
     "mocha": "^3.5.3"
   }
 }

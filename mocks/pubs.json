@@ -64,11 +64,11 @@
             "mail": "barabiere69@gmail.com"
         },
         "openDays": [
-            "Monday",
             "Wednesday",
             "Thursday",
             "Friday",
-            "Saturday"
+            "Saturday",
+            "Sunday"
         ],
         "openHours": {
             "start": 9,
