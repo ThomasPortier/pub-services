@@ -1,40 +1,38 @@
-var jsonPubsFile = require('../mocks/pubs.json');
-var moment = require('moment');
+const jsonPubsFile = require('../mocks/pubs.json');
+const moment = require('moment');
+const owner = require('../Models/OwnerClass');
+const beer = require('../Models/BeerClass');
+const openHours = require('../Models/OpenHoursClass');
+const pub = require('../Models/PubClass');
+
+
+
+function dataFromClass(){
+    const pubs = jsonPubsFile.map( function(indexPub){
+        const unOwner = new owner(indexPub.owner.firstName, indexPub.owner.lastName, indexPub.owner.mail)
+        const unOpenHours = new openHours(indexPub.openHours.start, indexPub.openHours.end)
+        const beersList = indexPub.beers.map( function(indexBeer){
+            return new beer(indexBeer.type, indexBeer.name)         
+        })
+        return  new pub(indexPub.name, unOwner, indexPub.openDays, unOpenHours, beersList)
+    }) 
+    return pubs;
+}
+
+
 
 function listerPubs() {
-    return jsonPubsFile
+    return dataFromClass()
 }
 
 function listerPubsOpenNow() {
-    var today = (moment().format('dddd'));
-    var hourNow = (moment().format('hhmm'));
-    var openPubs = [];
-    //console.log(today, hourNow)
-     for (i = 0; i < jsonPubsFile.length; i++) {
-        var indexTabOpenDays = jsonPubsFile[i].openDays
-        //console.log(indexTabOpenDays)
-        if (indexTabOpenDays.includes(today)) {
-            //console.log(today + ' présent')
-            openPubs.push(jsonPubsFile[i].name);
-        }
-    } 
-    console.log(openPubs)
-    return openPubs
+    let today = (moment().format('dddd'));
+    //console.log(jsonPubsFile.filter(pub => pub.openDays.includes(today)).map(pub => pub.name))
+    return dataFromClass().filter(pub => pub.openDays.includes(today))
 }
-
-
-
-
-
 
 module.exports = {
     listerPubs: listerPubs,
     listerPubsOpenNow: listerPubsOpenNow
 };
-
-
-listerPubs();
-listerPubsOpenNow();
-
-console.log(typeof jsonPubsFile)
 

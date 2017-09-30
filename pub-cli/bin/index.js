@@ -7,3 +7,4 @@ program
 if (program.list) {
     require('../src/main').getListPub();
 }
+
